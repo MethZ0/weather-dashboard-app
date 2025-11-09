@@ -18,7 +18,7 @@ const Header = ({ onSearch, activeTab, setActiveTab }) => {
         <div className="flex items-center gap-8">
           <div className="flex items-center gap-2">
             <Cloud className="w-8 h-8 text-blue-500" />
-            <span className="text-xl font-bold text-white">WeatherApp</span>
+            <span className="text-xl font-bold text-white">WeatherScope</span>
           </div>
           
           <nav className="flex gap-6">
