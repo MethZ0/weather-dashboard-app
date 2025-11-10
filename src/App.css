@@ -18,3 +18,52 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #6b7280;
 }
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Improve touch targets */
+  button, a, input {
+    min-height: 44px;
+  }
+
+  /* Prevent text size adjustment on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  /* Smooth scrolling on mobile */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Prevent horizontal scrolling */
+body {
+  overflow-x: hidden;
+}
+
+/* Better touch scrolling on iOS */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Leaflet map mobile adjustments */
+.leaflet-container {
+  font-family: inherit;
+  touch-action: pan-x pan-y;
+}
+
+@media (max-width: 640px) {
+  .leaflet-control-zoom {
+    margin-left: 5px !important;
+    margin-top: 5px !important;
+  }
+  
+  .leaflet-control-zoom a {
+    width: 26px !important;
+    height: 26px !important;
+    line-height: 26px !important;
+  }
+}

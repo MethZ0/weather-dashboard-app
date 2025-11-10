@@ -35,15 +35,15 @@ const WeatherMap = ({ city, coordinates }) => {
   };
 
   return (
-    <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-xl font-semibold text-white">Weather Map</h3>
-        <div className="flex gap-2">
+    <div className="bg-gray-900 rounded-lg p-4 sm:p-6 border border-gray-800">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 mb-4">
+        <h3 className="text-lg sm:text-xl font-semibold text-white">Weather Map</h3>
+        <div className="flex gap-2 overflow-x-auto pb-2 sm:pb-0">
           {Object.keys(layerUrls).map((layer) => (
             <button
               key={layer}
               onClick={() => setActiveLayer(layer)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
                 activeLayer === layer
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-800 text-gray-400 hover:text-white'
@@ -55,7 +55,7 @@ const WeatherMap = ({ city, coordinates }) => {
         </div>
       </div>
 
-      <div className="relative h-96 rounded-lg overflow-hidden">
+      <div className="relative h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
         <MapContainer
           center={center}
           zoom={10}

@@ -15,39 +15,39 @@ const CurrentWeather = ({ weather }) => {
   };
 
   return (
-    <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
-      <div className="mb-6">
-        <h2 className="text-2xl font-semibold text-white mb-1">
+    <div className="bg-gray-900 rounded-lg p-4 sm:p-6 border border-gray-800">
+      <div className="mb-4 sm:mb-6">
+        <h2 className="text-xl sm:text-2xl font-semibold text-white mb-1">
           {weather.city}, {weather.country}
         </h2>
         <p className="text-gray-400 text-sm">{weather.description}</p>
       </div>
 
-      <div className="flex items-start justify-between mb-8">
-        <div className="flex items-center gap-4">
+      <div className="flex items-start justify-between mb-6 sm:mb-8">
+        <div className="flex items-center gap-2 sm:gap-4">
           {getWeatherIcon()}
-          <div className="text-7xl font-bold text-white">
+          <div className="text-5xl sm:text-7xl font-bold text-white">
             {Math.round(weather.temp)}°C
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-4 sm:gap-6">
         <div>
-          <p className="text-gray-400 text-sm mb-1">Feels Like</p>
-          <p className="text-white text-xl font-semibold">{Math.round(weather.feels_like)}°C</p>
+          <p className="text-gray-400 text-xs sm:text-sm mb-1">Feels Like</p>
+          <p className="text-white text-lg sm:text-xl font-semibold">{Math.round(weather.feels_like)}°C</p>
         </div>
         <div>
-          <p className="text-gray-400 text-sm mb-1">Humidity</p>
-          <p className="text-white text-xl font-semibold">{weather.humidity}%</p>
+          <p className="text-gray-400 text-xs sm:text-sm mb-1">Humidity</p>
+          <p className="text-white text-lg sm:text-xl font-semibold">{weather.humidity}%</p>
         </div>
         <div>
-          <p className="text-gray-400 text-sm mb-1">Wind Speed</p>
-          <p className="text-white text-xl font-semibold">{weather.wind_speed} km/h</p>
+          <p className="text-gray-400 text-xs sm:text-sm mb-1">Wind Speed</p>
+          <p className="text-white text-lg sm:text-xl font-semibold">{weather.wind_speed} km/h</p>
         </div>
         <div>
-          <p className="text-gray-400 text-sm mb-1">UV Index</p>
-          <p className="text-white text-xl font-semibold">{weather.uv_index || 'Moderate'}</p>
+          <p className="text-gray-400 text-xs sm:text-sm mb-1">UV Index</p>
+          <p className="text-white text-lg sm:text-xl font-semibold">{weather.uv_index || 'Moderate'}</p>
         </div>
       </div>
     </div>

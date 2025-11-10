@@ -55,14 +55,14 @@ function App() {
         setActiveTab={setActiveTab}
       />
 
-      <main className="container mx-auto px-6 py-8">
+      <main className="container mx-auto px-4 sm:px-6 py-4 sm:py-8">
         {loading ? (
-          <div className="flex items-center justify-center h-96">
+          <div className="flex items-center justify-center h-64 sm:h-96">
             <p className="text-gray-400 text-lg">Loading weather data...</p>
           </div>
         ) : error ? (
-          <div className="flex items-center justify-center h-96">
-            <div className="text-center">
+          <div className="flex items-center justify-center h-64 sm:h-96">
+            <div className="text-center px-4">
               <p className="text-red-400 text-lg mb-2">{error}</p>
               <p className="text-gray-400 text-sm">
                 Make sure to add your OpenWeather API key to the .env file
@@ -70,15 +70,15 @@ function App() {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
             {/* Left Column - Current Weather and Forecast */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <CurrentWeather weather={currentWeather} />
               <Forecast forecast={forecast} />
             </div>
 
             {/* Middle and Right Columns - Map and Historical Trends */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-4 sm:space-y-6">
               <WeatherMap 
                 city={currentCity} 
                 coordinates={currentWeather?.coordinates}

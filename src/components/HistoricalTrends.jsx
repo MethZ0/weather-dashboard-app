@@ -91,15 +91,15 @@ const HistoricalTrends = ({ historicalData }) => {
   };
 
   return (
-    <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-semibold text-white">Historical Trends</h3>
-        <div className="flex gap-2">
+    <div className="bg-gray-900 rounded-lg p-4 sm:p-6 border border-gray-800">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 mb-4 sm:mb-6">
+        <h3 className="text-lg sm:text-xl font-semibold text-white">Historical Trends</h3>
+        <div className="flex gap-2 overflow-x-auto pb-2 sm:pb-0">
           {views.map((view) => (
             <button
               key={view}
               onClick={() => setActiveView(view)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
                 activeView === view
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-800 text-gray-400 hover:text-white'
@@ -111,7 +111,7 @@ const HistoricalTrends = ({ historicalData }) => {
         </div>
       </div>
 
-      <div className="h-80">
+      <div className="h-64 sm:h-80">
         <Line data={data} options={options} />
       </div>
     </div>
